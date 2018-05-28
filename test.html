@@ -1,0 +1,27 @@
+<!-- Script for testing purpose only -->
+<html>
+    <head>
+        <script src='isProfane.js' type='text/javascript'></script> 
+        <script src="runner.js" type="text/javascript"></script>
+        
+        
+    </head>
+    <body>
+
+        <input type="text" id="user"/>
+        <input type="submit" name="trigger" id="btn" 
+                        onclick="trigger(document.getElementById('user').value)">
+
+                        <script>
+                        
+                        function trigger(s){
+                            var start_time = performance.now() ;
+                            input = s;          // variable exists in runner.js
+                            run();              // Function call from runner.js
+                            var end_time = performance.now();
+                            console.log("it took "+ (end_time- start_time)+" milliseconds" );
+                        
+                        }
+                        </script>
+    </body>
+</html>
