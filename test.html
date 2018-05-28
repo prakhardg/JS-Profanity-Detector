@@ -15,11 +15,8 @@
                         <script>
                         
                         function trigger(s){
-                            var start_time = performance.now() ;
-                            input = s;          // variable exists in runner.js
+                            inputSentence = s;          // variable exists in runner.js
                             run();              // Function call from runner.js
-                            var end_time = performance.now();
-                            console.log("it took "+ (end_time- start_time)+" milliseconds" );
                         
                         }
                         </script>
