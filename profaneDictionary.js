@@ -1,21 +1,38 @@
-var profaneDict;
-function CallURL()  {
-// console.log("in herre");
-$.ajax({
-async: false,
-url: 'http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527507132/profane_json.json',
-type: "GET",
-dataType: "json",
-success: function(msg)  {
-JsonCallback(msg)
-},
-error: function()  {
-  console.log("Some Error occured");
-}
-});
+/**
+ * Fetches the dictionary as JSON from the cloudinary CDN and sets value for the ProfaneDictionary object.
+ * 
+ */
+class ProfaneDictionary{
+  constructor(){
+    this.value = '{}';
+  }
+  setValue(val){
+    this.value = val;
+  }
+  getValue(){
+    return this.value;
+  }
 }
 
-function JsonCallback(json)  {
-profaneDict = json;
-// console.log(JSON.stringify(json));
+let profaneDict = new ProfaneDictionary();
+
+function CallURLPromise(){
+  let promise2 = new Promise(function(resolve, reject){
+    CallURL();
+    if(profaneDict.getValue !='{}') resolve();
+    else reject(Error("Error in proFaneDict"));
+    });
+    return promise2;
 }
+
+
+function CallURL(){
+
+  fetch('http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527507132/profane_json.json')
+  .then((resp) => resp.json())
+  .then(function(data){
+    profaneDict.setValue(data);
+  });
+}
+
+

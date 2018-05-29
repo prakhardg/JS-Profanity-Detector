@@ -1,5 +1,10 @@
-// document.write("<script src = 'dictionary.js' type = 'text/javascript'></script>");
-document.write("<script src = 'profaneDictionary.js' type = 'text/javascript'></script>");
+/**
+ * This script uses Porter stemmer logic which is used to stem the words and Ngrams created from the user input.
+ * Then we can search if the stem word is present as a key in profaneDict which is loaded from the CDN
+ * stemmer('string')
+ * return type = string
+ */
+// document.write("<script src = 'profaneDictionary.js' type = 'text/javascript'></script>");
 var stemmer = (function(){
   var step2list = {
           "ational" : "ate",

@@ -1,10 +1,8 @@
 
 document.write("<script src='isProfane.js' type='text/javascript'></script>");
-// var input;
 
-function run(){
-// inputSentence = input;                                       // Variable inputSentence is in isProfane.js
-let profanityFound = isProfane(inputSentence);
+function run(input_sentence){
+let profanityFound = isProfane(input_sentence);
 
 if(profanityFound)
     console.log("inputSentence contains profanity" );
