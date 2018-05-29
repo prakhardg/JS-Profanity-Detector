@@ -2,6 +2,15 @@ var inputSentence;
 document.write("<script src='hashset.js' type='text/javascript'></script>");
 document.write("<script src='stemmer.js' type='text/javascript'></script>");
 
+// var profaneDict = new Promise()
+
+
+
+
+
+
+
+
 
 /*
 Function takes the string argument and returns boolean value true if the inputSentence contains profanity
@@ -20,7 +29,7 @@ function isProfane(inputSentence){
       
       for(let i = 0; i< ngrams.length; i++){
           word = stemmer(ngrams[i].toLowerCase());
-          if(profaneStemmed.hasOwnProperty(word))           // profaneStemmed is from stemmer.js--->dictionary.js
+          if(profaneDict.hasOwnProperty(word))           // profaneStemmed is from stemmer.js--->dictionary.js
           {
               profane = true;
               break;

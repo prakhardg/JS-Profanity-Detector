@@ -1,4 +1,5 @@
-document.write("<script src = 'dictionary.js' type = 'text/javascript'></script>");
+// document.write("<script src = 'dictionary.js' type = 'text/javascript'></script>");
+document.write("<script src = 'profaneDictionary.js' type = 'text/javascript'></script>");
 var stemmer = (function(){
   var step2list = {
           "ational" : "ate",
