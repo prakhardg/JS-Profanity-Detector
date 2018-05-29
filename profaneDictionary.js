@@ -28,7 +28,7 @@ function CallURLPromise(){
 
 function CallURL(){
 
-  fetch('http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527507132/profane_json.json')
+  fetch('http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527602729/profane_json.json')
   .then((resp) => resp.json())
   .then(function(data){
     profaneDict.setValue(data);
