@@ -1,81 +1,36 @@
 <!-- Script for testing purpose only -->
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="profaneDictionary.js" type="text/javascript"> </script>
-        <script src='isProfane.js' type='text/javascript'></script> 
-        <script src="runner.js" type="text/javascript"></script>    
-        <script src="SentenceClass.js" type="text/javascript"></script>
-    </head>
-    <body onload="getDict()">
-        <input type="text" id="user"/>
-        <input 
-            type="submit" 
-            name="trigger" 
-            id="btn" 
-            onclick="trigger(document.getElementById('user').value)"
-        />
-        <script>
-            // document.getElementById("user").onload = function(){
-            //     getDict();
-            // }
+<head>
+    <script src="profaneDictionary.js" type="text/javascript"> </script>
+    <script src='isProfane.js' type='text/javascript'></script>
+    <script src="runner.js" type="text/javascript"></script>
+    <script src="SentenceClass.js" type="text/javascript"></script>
+</head>
+
+<body onload="getDict()">
+    <input type="text" id="user" />
+    <input type="submit" name="trigger" id="btn" onclick="trigger(document.getElementById('user').value)" />
+    <script>
+        function getDict() {
+            CallURL();
+        }
 
 
-            function getDict(){
-                // console.log("herhe");
-                CallURL();
-                // CallURLPromise().then(function(){
-
-                // }, function(){
-                //     getDict();
-                // });
-            }
-
-            // async function trigger(s){
-            //     try{
-            //         inputSentence = await s;
-
-
-            //     }catch(err){
-            //         console.log(err);
-            //     }
-               
-
-            // }
-
-
-
-            function trigger(s){
-                let input = new Sentence(s);
-                // console.log(input.getSentence());
-                
-                let promise = new Promise(function(resolve, reject){
-                if(input.getSentence() === s /*&& profaneDict.value*/){
-                    
+        function trigger(s) {
+            let input = new Sentence(s);
+            let promise = new Promise(function (resolve, reject) {
+                if (input.getSentence() === s /*&& profaneDict.value*/) {
                     resolve();
                 }
                 else reject(Error("inputSentence is null or Dictionary is not loaded"));
             });
-            promise.then(function(){
+            promise.then(function () {
                 run(input.getSentence());
-            }, function(err){
-                // console.log("herhe");
+            }, function (err) {
                 console.log(Error(err));
 
-            } );
-
-            // promise.then(function(){
-            //     CallURLPromise().then(function(){
-            //         run(input.getSentence());
-
-            //     }, function(err){
-            //         console.log(err);
-            //     });
-            // }, function(err){
-            //     console.log(err);
-            // });
-
-            }
-        </script>
-    </body>
+            });
+        }
+    </script>
+</body>
 </html>
