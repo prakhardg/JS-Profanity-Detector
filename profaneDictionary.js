@@ -2,15 +2,13 @@
  * Fetches the dictionary as JSON from the cloudinary CDN and sets value for the ProfaneDictionary object.
  * 
  */
-class ProfaneDictionary {
-  constructor() {
-    this.value = '{}';
-  }
-  setValue(val) {
-    this.value = val;
-  }
-  getValue() {
+function ProfaneDictionary(){
+  this.value = {};
+  this.getValue = function(){
     return this.value;
+  }
+  this.setValue = function(val){
+    this.value = val;
   }
 }
 

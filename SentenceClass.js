@@ -1,10 +1,7 @@
-class Sentence {
-    constructor(val) {
-        this.sentence = val;
-    }
+function Sentence(val){
+    this.sentence = val;
 
-    getSentence() {
+    this.getSentence = function(){
         return this.sentence;
     }
-
 }
