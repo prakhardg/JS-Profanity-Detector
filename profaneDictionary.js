@@ -15,7 +15,7 @@ function ProfaneDictionary(){
 let profaneDict = new ProfaneDictionary();
 
 function CallURL() {
-  fetch('http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527671529/profane_words.json')
+  fetch('http://res.cloudinary.com/dzbqhaluy/raw/upload/v1527681587/profane_words.json')
     .then((resp) => resp.json())
     .then(function (data) {
       profaneDict.setValue(data);
