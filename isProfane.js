@@ -25,7 +25,7 @@ function isProfane(input_sentence) {
 Function takes the String input and the N value to and returns the hashset of the Ngrams
 */
 function getNgrams(input_sentence, N) {
-  let words = input_sentence.split(/\s+/);
+  let words = input_sentence.split(/\s|\.|\?|\-|,|#|\!/g);
   let nGramSet = new Set();
   let len = words.length;
 
